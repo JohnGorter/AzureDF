@@ -1,0 +1,55 @@
+{
+	"name": "SourceDataset_ref_resourcegroup",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "ref_resourcegroup.json",
+				"folderPath": "input",
+				"container": "datafactory"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"changed": {
+					"type": "string"
+				},
+				"version": {
+					"type": "integer"
+				},
+				"active": {
+					"type": "integer"
+				},
+				"deleted": {
+					"type": "integer"
+				},
+				"externalid": {
+					"type": "string"
+				},
+				"uname": {
+					"type": "string"
+				},
+				"name": {
+					"type": "string"
+				},
+				"description": {
+					"type": "string"
+				},
+				"email": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

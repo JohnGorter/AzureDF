@@ -1,0 +1,103 @@
+{
+	"name": "SourceDataset_ref_resource",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "ref_resource.json",
+				"folderPath": "input",
+				"container": "datafactory"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"changed": {
+					"type": "string"
+				},
+				"version": {
+					"type": "integer"
+				},
+				"deleted": {
+					"type": "integer"
+				},
+				"externalid": {
+					"type": "string"
+				},
+				"uname": {
+					"type": "string"
+				},
+				"name": {
+					"type": "string"
+				},
+				"resourcetype": {
+					"type": "integer"
+				},
+				"resourcecolor": {
+					"type": "string"
+				},
+				"firstname": {
+					"type": "string"
+				},
+				"lastname": {
+					"type": "string"
+				},
+				"lastnameprefix": {
+					"type": "string"
+				},
+				"maidenname": {
+					"type": "string"
+				},
+				"maidennameprefix": {
+					"type": "string"
+				},
+				"birthdate": {
+					"type": "string"
+				},
+				"gender": {
+					"type": "string"
+				},
+				"email": {
+					"type": "string"
+				},
+				"phone": {
+					"type": "string"
+				},
+				"sms": {
+					"type": "string"
+				},
+				"prefcontact": {
+					"type": "integer"
+				},
+				"address_street": {
+					"type": "string"
+				},
+				"address_housenumber": {
+					"type": "string"
+				},
+				"address_housenumbersuffix": {
+					"type": "string"
+				},
+				"address_postalcode": {
+					"type": "string"
+				},
+				"address_locality": {
+					"type": "string"
+				},
+				"address_countrycode": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

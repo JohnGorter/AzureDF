@@ -1,0 +1,788 @@
+{
+	"name": "Pipeline_Intus",
+	"properties": {
+		"description": "Intus 1e test",
+		"activities": [
+			{
+				"name": "Pipe_hist_timeinterval",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "datafactory/input/hist_timeinterval_Ricky_is_Echt_heel_goed.json"
+					},
+					{
+						"name": "Destination",
+						"value": "datafactory/output/Intus_bewerkte_file"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"additionalColumns": [
+							{
+								"name": "GAVIN_IS_COOL",
+								"value": "NO"
+							}
+						],
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
+					},
+					"sink": {
+						"type": "JsonSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings",
+							"copyBehavior": "FlattenHierarchy"
+						},
+						"formatSettings": {
+							"type": "JsonWriteSettings",
+							"filePattern": "setOfObjects"
+						}
+					},
+					"enableStaging": false,
+					"enableSkipIncompatibleRow": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['id']"
+								},
+								"sink": {
+									"path": "$['id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['changed']"
+								},
+								"sink": {
+									"path": "$['changed']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['version']"
+								},
+								"sink": {
+									"path": "$['version']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['resource_id']"
+								},
+								"sink": {
+									"path": "$['resource_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['labourhist_id']"
+								},
+								"sink": {
+									"path": "$['labourhist_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['rosterdate']"
+								},
+								"sink": {
+									"path": "$['rosterdate']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['rosterline']"
+								},
+								"sink": {
+									"path": "$['rosterline']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['shift_id']"
+								},
+								"sink": {
+									"path": "$['shift_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['plannedprop_id']"
+								},
+								"sink": {
+									"path": "$['plannedprop_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['overrulinggroup_id']"
+								},
+								"sink": {
+									"path": "$['overrulinggroup_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['timetype_id']"
+								},
+								"sink": {
+									"path": "$['timetype_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['starttime']"
+								},
+								"sink": {
+									"path": "$['starttime']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['endtime']"
+								},
+								"sink": {
+									"path": "$['endtime']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['starttimeminutes']"
+								},
+								"sink": {
+									"path": "$['starttimeminutes']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['endtimeminutes']"
+								},
+								"sink": {
+									"path": "$['endtimeminutes']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['workedhours']"
+								},
+								"sink": {
+									"path": "$['workedhours']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['nr']"
+								},
+								"sink": {
+									"path": "$['nr']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['timeintervalcount']"
+								},
+								"sink": {
+									"path": "$['timeintervalcount']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['labourhistgroup_id']"
+								},
+								"sink": {
+									"path": "$['labourhistgroup_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['originallabourhistgroup_id']"
+								},
+								"sink": {
+									"path": "$['originallabourhistgroup_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['plannedresourcegroup_id']"
+								},
+								"sink": {
+									"path": "$['plannedresourcegroup_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hist_roster_id']"
+								},
+								"sink": {
+									"path": "$['hist_roster_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['rdp_nr']"
+								},
+								"sink": {
+									"path": "$['rdp_nr']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['GAVIN_IS_COOL']"
+								},
+								"sink": {
+									"path": "$['GAVIN_IS_COOL']"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_hist_timeinterval",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_1al",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Pipe_ref_resource",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "datafactory/input/hist_timeinterval_Ricky_is_Echt_heel_goed.json"
+					},
+					{
+						"name": "Destination",
+						"value": "datafactory/output/Intus_bewerkte_file"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
+					},
+					"sink": {
+						"type": "JsonSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings",
+							"copyBehavior": "FlattenHierarchy"
+						},
+						"formatSettings": {
+							"type": "JsonWriteSettings",
+							"filePattern": "setOfObjects"
+						}
+					},
+					"enableStaging": false,
+					"enableSkipIncompatibleRow": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['id']"
+								},
+								"sink": {
+									"path": "$['id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['changed']"
+								},
+								"sink": {
+									"path": "$['changed']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['version']"
+								},
+								"sink": {
+									"path": "$['version']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['resource_id']"
+								},
+								"sink": {
+									"path": "$['resource_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['labourhist_id']"
+								},
+								"sink": {
+									"path": "$['labourhist_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['rosterdate']"
+								},
+								"sink": {
+									"path": "$['rosterdate']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['rosterline']"
+								},
+								"sink": {
+									"path": "$['rosterline']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['shift_id']"
+								},
+								"sink": {
+									"path": "$['shift_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['plannedprop_id']"
+								},
+								"sink": {
+									"path": "$['plannedprop_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['overrulinggroup_id']"
+								},
+								"sink": {
+									"path": "$['overrulinggroup_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['timetype_id']"
+								},
+								"sink": {
+									"path": "$['timetype_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['starttime']"
+								},
+								"sink": {
+									"path": "$['starttime']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['endtime']"
+								},
+								"sink": {
+									"path": "$['endtime']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['starttimeminutes']"
+								},
+								"sink": {
+									"path": "$['starttimeminutes']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['endtimeminutes']"
+								},
+								"sink": {
+									"path": "$['endtimeminutes']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['workedhours']"
+								},
+								"sink": {
+									"path": "$['workedhours']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['nr']"
+								},
+								"sink": {
+									"path": "$['nr']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['timeintervalcount']"
+								},
+								"sink": {
+									"path": "$['timeintervalcount']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['labourhistgroup_id']"
+								},
+								"sink": {
+									"path": "$['labourhistgroup_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['originallabourhistgroup_id']"
+								},
+								"sink": {
+									"path": "$['originallabourhistgroup_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['plannedresourcegroup_id']"
+								},
+								"sink": {
+									"path": "$['plannedresourcegroup_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hist_roster_id']"
+								},
+								"sink": {
+									"path": "$['hist_roster_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['rdp_nr']"
+								},
+								"sink": {
+									"path": "$['rdp_nr']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['GAVIN_IS_COOL']"
+								},
+								"sink": {
+									"path": "$['GAVIN_IS_COOL']"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_ref_resource",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_1al",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Pipe_ref_resourcegroup",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "datafactory/input/hist_timeinterval_Ricky_is_Echt_heel_goed.json"
+					},
+					{
+						"name": "Destination",
+						"value": "datafactory/output/Intus_bewerkte_file"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
+					},
+					"sink": {
+						"type": "JsonSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings",
+							"copyBehavior": "FlattenHierarchy"
+						},
+						"formatSettings": {
+							"type": "JsonWriteSettings",
+							"filePattern": "setOfObjects"
+						}
+					},
+					"enableStaging": false,
+					"enableSkipIncompatibleRow": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['id']"
+								},
+								"sink": {
+									"path": "$['id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['changed']"
+								},
+								"sink": {
+									"path": "$['changed']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['version']"
+								},
+								"sink": {
+									"path": "$['version']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['resource_id']"
+								},
+								"sink": {
+									"path": "$['resource_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['labourhist_id']"
+								},
+								"sink": {
+									"path": "$['labourhist_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['rosterdate']"
+								},
+								"sink": {
+									"path": "$['rosterdate']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['rosterline']"
+								},
+								"sink": {
+									"path": "$['rosterline']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['shift_id']"
+								},
+								"sink": {
+									"path": "$['shift_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['plannedprop_id']"
+								},
+								"sink": {
+									"path": "$['plannedprop_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['overrulinggroup_id']"
+								},
+								"sink": {
+									"path": "$['overrulinggroup_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['timetype_id']"
+								},
+								"sink": {
+									"path": "$['timetype_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['starttime']"
+								},
+								"sink": {
+									"path": "$['starttime']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['endtime']"
+								},
+								"sink": {
+									"path": "$['endtime']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['starttimeminutes']"
+								},
+								"sink": {
+									"path": "$['starttimeminutes']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['endtimeminutes']"
+								},
+								"sink": {
+									"path": "$['endtimeminutes']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['workedhours']"
+								},
+								"sink": {
+									"path": "$['workedhours']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['nr']"
+								},
+								"sink": {
+									"path": "$['nr']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['timeintervalcount']"
+								},
+								"sink": {
+									"path": "$['timeintervalcount']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['labourhistgroup_id']"
+								},
+								"sink": {
+									"path": "$['labourhistgroup_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['originallabourhistgroup_id']"
+								},
+								"sink": {
+									"path": "$['originallabourhistgroup_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['plannedresourcegroup_id']"
+								},
+								"sink": {
+									"path": "$['plannedresourcegroup_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hist_roster_id']"
+								},
+								"sink": {
+									"path": "$['hist_roster_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['rdp_nr']"
+								},
+								"sink": {
+									"path": "$['rdp_nr']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['GAVIN_IS_COOL']"
+								},
+								"sink": {
+									"path": "$['GAVIN_IS_COOL']"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_ref_resourcegroup",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_1al",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2024-03-20T12:56:54Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

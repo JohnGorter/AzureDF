@@ -1,0 +1,97 @@
+{
+	"name": "SourceDataset_hist_timeinterval",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "hist_timeinterval_Ricky_is_Echt_heel_goed.json",
+				"folderPath": "input",
+				"container": "datafactory"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"changed": {
+					"type": "string"
+				},
+				"version": {
+					"type": "integer"
+				},
+				"resource_id": {
+					"type": "integer"
+				},
+				"labourhist_id": {
+					"type": "integer"
+				},
+				"rosterdate": {
+					"type": "string"
+				},
+				"rosterline": {
+					"type": "integer"
+				},
+				"shift_id": {
+					"type": "integer"
+				},
+				"plannedprop_id": {
+					"type": "integer"
+				},
+				"overrulinggroup_id": {
+					"type": "null"
+				},
+				"timetype_id": {
+					"type": "integer"
+				},
+				"starttime": {
+					"type": "string"
+				},
+				"endtime": {
+					"type": "string"
+				},
+				"starttimeminutes": {
+					"type": "integer"
+				},
+				"endtimeminutes": {
+					"type": "integer"
+				},
+				"workedhours": {
+					"type": "number"
+				},
+				"nr": {
+					"type": "integer"
+				},
+				"timeintervalcount": {
+					"type": "integer"
+				},
+				"labourhistgroup_id": {
+					"type": "integer"
+				},
+				"originallabourhistgroup_id": {
+					"type": "integer"
+				},
+				"plannedresourcegroup_id": {
+					"type": "integer"
+				},
+				"hist_roster_id": {
+					"type": "integer"
+				},
+				"rdp_nr": {
+					"type": "integer"
+				},
+				"GAVIN_IS_COOL": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
